@@ -1,3 +1,4 @@
+//获取系统相关配置信息
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
