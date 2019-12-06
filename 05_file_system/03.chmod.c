@@ -1,3 +1,4 @@
+//改变文件权限
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -5,6 +6,7 @@
 
 int main(int argc, char * argv[])
 {
+    //先判断文件是否存在
     if(-1 == access(argv[2], F_OK))
     {
         perror("file not exit");
