@@ -1,3 +1,4 @@
+//改变目录、获取当前目录
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
