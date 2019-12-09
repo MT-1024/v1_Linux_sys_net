@@ -7,7 +7,6 @@
 int main()
 {
     printf("hello\n");
-    //替换
     execl("/bin/ls", "ls", "-l", NULL);
     printf("world\n");
     return 0;
