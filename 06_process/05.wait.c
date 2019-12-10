@@ -1,6 +1,6 @@
 //wait()一般在父进程中调用，用于回收子进程的PCB
 //wait()是阻塞函数, 如果子进程不结束，父进程的wait()会一直等待子进程结束，并且回收子进程PCB
-//wait(int * status), status是传出参数，保存的是子进程退出信息
+//wait(int * status), status是传出参数，保存的是子进程PCB中退出信息i和意外终止信号
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
