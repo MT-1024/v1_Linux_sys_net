@@ -18,7 +18,7 @@ int main()
     /* 添加SIGINT到自定义信号集 */
     sigaddset(&myset, SIGINT);
 
-    /* 将自定义信号集与进程pcb中的阻塞信号集 ‘与’ 操作 */
+    /* 将自定义信号集与进程pcb中的阻塞信号集 ‘或’ 操作 */
     sigprocmask(SIG_BLOCK, &myset, NULL);
 
     while(1)
