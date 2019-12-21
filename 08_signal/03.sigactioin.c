@@ -12,16 +12,18 @@ void catch_sig_action(int num)
 int main()
 {
     struct sigaction act;
+
+    /* 捕捉信号后执行catch_sig_action */
     act.sa_handler = catch_sig_action;
 
     /* 指定捕捉信号后执行默认动作 */
-    act.sa_handler = SIG_DFL;
+    /* act.sa_handler = SIG_DFL; */
 
     /* 内核在执行某信号对应动作过程中，此时不会处理sa_mask中设置了屏蔽的信号；主要防止信号处理嵌套 */
     sigemptyset(&act.sa_mask);
     act.sa_flags = 0;
 
-    /* 捕捉到SIGINT信号后，执行相应动作 */
+    /* 捕捉到SIGINT信号后，执行相应动作 catch_sig_action */
     sigaction(SIGINT, &act, NULL);
 
     while(1)
