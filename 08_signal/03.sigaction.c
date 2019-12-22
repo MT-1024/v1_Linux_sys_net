@@ -23,7 +23,7 @@ int main()
     sigemptyset(&act.sa_mask);
     act.sa_flags = 0;
 
-    /* 捕捉到SIGINT信号后，执行相应动作 catch_sig_action */
+    /* 捕捉到SIGINT信号后，如果Block信号集没有阻塞该信号，则执行相应动作 catch_sig_action */
     sigaction(SIGINT, &act, NULL);
 
     while(1)
